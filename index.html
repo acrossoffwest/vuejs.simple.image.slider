@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simple image slider | VueJS</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <div  id="image-slider" class="aow-simple-image-slider-wrapper">
+            <h1>Simple image slider | VueJS</h1>
+            <aow-simple-image-slider :images="slider.images" :current="slider.current"></aow-simple-image-slider>
+        </div>
+
+        <!-- Simple VueJS Image Slider templates -->
+        <template id="aow-simple-image-slider">
+            <div class="aow-simple-image-slider">
+                <image-item v-for="(image, index) in images" :index="index" :current="current" :src="image"></image-item>
+                <image-thumbs :images="images"></image-thumbs>
+            </div>
+        </template>
+        <template id="image-wrapper">
+            <div :class="'image-wrapper ' + (index == current ? '' : 'hidden')">
+                <img :src="src" alt="">
+            </div>
+        </template>
+        <template id="image-thumbs">
+            <div class="thumb-wrapper">
+                <div
+                    :class="'thumb-image'"
+                    v-for="(image, index) in images"
+                    :style="'background-image: url(' + image + ')'"
+                    alt=""
+                    @click="changeCurrentImage(index)"></div>
+            </div>
+        </template>
+        <!-- Simple VueJS Image Slider templates -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+        <script src="js/components.js"></script>
+
+        <script src="js/slider.js"></script>
+    </body>
+</html>
