@@ -5,7 +5,10 @@
     width: 50%;
     display: inline-block;
 }
-.hidden {
+.aow-simple-image-slider .image-wrapper {
+    margin-bottom: 20px;
+}
+.aow-simple-image-slider-wrapper .hidden {
     display: none;
 }
 

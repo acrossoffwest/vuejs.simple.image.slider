@@ -15,7 +15,7 @@
         <template id="aow-simple-image-slider">
             <div class="aow-simple-image-slider">
                 <image-item v-for="(image, index) in images" :index="index" :current="current" :src="image"></image-item>
-                <image-thumbs :images="images"></image-thumbs>
+                <image-thumbs v-if="images.length > 1" :images="images"></image-thumbs>
             </div>
         </template>
         <template id="image-wrapper">
